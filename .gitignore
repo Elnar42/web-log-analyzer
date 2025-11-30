@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated or uploaded media/logs
+backend/media/*.txt
+public/samples/*.log
+
+# Build outputs, caches
+dist/
+build/
+.cache/

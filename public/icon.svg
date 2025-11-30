@@ -1,0 +1,33 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="36" fill="url(#gradMain)"/>
+  <g transform="translate(25, 25)">
+    <!-- Chart bars representing analytics -->
+    <rect x="20" y="80" width="12" height="40" rx="2" fill="white" fill-opacity="0.4"/>
+    <rect x="40" y="60" width="12" height="60" rx="2" fill="white" fill-opacity="0.4"/>
+    <rect x="60" y="50" width="12" height="70" rx="2" fill="white" fill-opacity="0.4"/>
+    <rect x="80" y="40" width="12" height="80" rx="2" fill="white" fill-opacity="0.4"/>
+    <rect x="100" y="30" width="12" height="90" rx="2" fill="white" fill-opacity="0.4"/>
+    <!-- Line graph overlay -->
+    <path d="M26 100 L46 80 L66 70 L86 60 L106 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Data points -->
+    <circle cx="26" cy="100" r="3" fill="white"/>
+    <circle cx="46" cy="80" r="3" fill="white"/>
+    <circle cx="66" cy="70" r="3" fill="white"/>
+    <circle cx="86" cy="60" r="3" fill="white"/>
+    <circle cx="106" cy="50" r="3" fill="white"/>
+    <!-- WA monogram at bottom -->
+    <g transform="translate(63, 120)">
+      <!-- W -->
+      <path d="M-20 0 L-16 -16 L-10 0 L-4 -16 L0 0" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- A -->
+      <path d="M6 -16 L3 0 L11 0" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="4.5" y1="-8" x2="9.5" y2="-8" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
