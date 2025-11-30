@@ -180,28 +180,6 @@ export function FileUpload({ onUpload, isUploading, uploadProgress }: FileUpload
 
   const currentStep = getCurrentStep()
 
-  const handleSampleDownload = async (filename: string) => {
-    try {
-      const response = await fetch(`/samples/${filename}`)
-      if (!response.ok) {
-        setStatusMessage(`Sample file ${filename} not found. Please add it to public/samples/`)
-        setUploadStatus("error")
-        return
-      }
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      window.URL.revokeObjectURL(url)
-    } catch (error) {
-      setStatusMessage(`Failed to download ${filename}`)
-      setUploadStatus("error")
-    }
-  }
 
   return (
     <div className="flex flex-col lg:flex-row gap-6">
@@ -311,45 +289,6 @@ export function FileUpload({ onUpload, isUploading, uploadProgress }: FileUpload
           )}
         </div>
       )}
-      </div>
-
-      {/* Sample Files Section */}
-      <div className="lg:w-80 lg:border-l lg:pl-6">
-        <div className="bg-card border border-border rounded-lg p-4">
-          <h3 className="text-sm font-semibold text-foreground mb-3">Sample Files</h3>
-          <p className="text-xs text-muted-foreground mb-4">
-            Download sample log files to test the analyzer
-          </p>
-          <div className="space-y-2">
-            <button
-              onClick={() => handleSampleDownload('sample-apache.log')}
-              className="w-full flex items-center gap-2 px-3 py-2 text-sm bg-secondary hover:bg-secondary/80 rounded-lg transition-colors text-foreground"
-            >
-              <FileText className="w-4 h-4" />
-              <span className="flex-1 text-left">sample-apache.log</span>
-              <Upload className="w-4 h-4 text-muted-foreground" />
-            </button>
-            <button
-              onClick={() => handleSampleDownload('sample-nginx.log')}
-              className="w-full flex items-center gap-2 px-3 py-2 text-sm bg-secondary hover:bg-secondary/80 rounded-lg transition-colors text-foreground"
-            >
-              <FileText className="w-4 h-4" />
-              <span className="flex-1 text-left">sample-nginx.log</span>
-              <Upload className="w-4 h-4 text-muted-foreground" />
-            </button>
-            <button
-              onClick={() => handleSampleDownload('sample.txt')}
-              className="w-full flex items-center gap-2 px-3 py-2 text-sm bg-secondary hover:bg-secondary/80 rounded-lg transition-colors text-foreground"
-            >
-              <FileText className="w-4 h-4" />
-              <span className="flex-1 text-left">sample.txt</span>
-              <Upload className="w-4 h-4 text-muted-foreground" />
-            </button>
-            <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-border">
-              Place your sample files in <code className="text-xs bg-secondary px-1 py-0.5 rounded">public/samples/</code>
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   )

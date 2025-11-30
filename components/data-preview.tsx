@@ -9,7 +9,7 @@ interface DataPreviewProps {
   totalOriginal: number
 }
 
-const ITEMS_PER_PAGE = 100
+const ITEMS_PER_PAGE = 20
 
 export function DataPreview({ data, totalOriginal }: DataPreviewProps) {
   const [currentPage, setCurrentPage] = useState(1)
